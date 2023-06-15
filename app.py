@@ -2,7 +2,7 @@ import streamlit as st
 from streamlit_chat import message
 from streamlit_extras.colored_header import colored_header
 from streamlit_extras.add_vertical_space import add_vertical_space
-from backend.backend import run_llm, run_llm
+from backend.backend import run_llm
 import os
 
 
@@ -11,16 +11,17 @@ def get_text(instruction: str = "You: "):
     return input_text
 
 
-st.set_page_config(page_title="Codepen - An LLM-powered Repository SideKick")
+st.set_page_config(page_title="Code chat")
 with st.sidebar:
-    st.title("🤗💬 Code-Pen")
+    st.title("🤗💬 Code Chat")
     st.markdown(
         """
     ## About
     This app is an LLM-powered chatbot built using:
     - [LangChain 🦜🔗](https://python.langchain.com/en/latest/index.html)
     - [Pinecone 🌲 Vectorestore](https://www.pinecone.io/)
-    - [Palm2 LLM Model](https://ai.google/discover/palm2)   
+    - [Chroma DB](https://www.trychroma.com/)
+    - [OpenAI](https://openai.com/)
     - [Streamlit](https://streamlit.io/)
 
 
@@ -28,16 +29,11 @@ with st.sidebar:
     """
     )
     add_vertical_space(5)
-    # api_key_container = st.container()
-    # with api_key_container:
-    #     palm_api_key = get_text(instruction="PALM2_API_KEY")
-    #     if palm_api_key:
-    #         os.environ["PALM_2_API_KEY"]
 
-    st.write("Made by [Eden Marco](https://www.linkedin.com/in/eden-marco/)")
+    st.write("")
 
 if "generated" not in st.session_state:
-    st.session_state["generated"] = ["I'm CodePen, How may I help you?"]
+    st.session_state["generated"] = ["I'm Code chat, How may I help you?"]
 if "past" not in st.session_state:
     st.session_state["past"] = ["Hi!"]
 if "chat_history" not in st.session_state:

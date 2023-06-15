@@ -1,11 +1,7 @@
 
 # Generative AI Github Assistant for Your Repository
 
-Chat with your repository GenAI project
-
-![Alt Text](https://github.com/g-emarco/github-assistant/blob/main/static/demo21.gif)
-
-
+Chat with your repository 
 ## Tech Stack
 
 
@@ -14,11 +10,11 @@ Chat with your repository GenAI project
 **Server Side:** LangChain  🦜🔗
 
 
-**Vectorstore:** Pinecone 🌲
+**Vectorstore:** Pinecone 🌲, Chroma
 
-**Embeddings:** GCP VertexAI  
+**Embeddings:** GCP VertexAI, OpenAI
 
-**Runtime:** Cloud Run  
+**Runtime:** Cloud Run, localhost
 
 ## Environment Variables
 
@@ -136,13 +132,4 @@ docker push us-east1-docker.pkg.dev/$PROJECT_ID/app/github-assitant:latest
     --set-secrets="GOOGLE_API_KEY=projects/PROJECT_ID/secrets/PALM2_API_KEY/versions/latest,PINECONE_API_KEY=projects/PROJECT_ID/secrets/ 
     PINECONE_API_KEY/versions/latest,PINECONE_ENVIRONMENT_REGION=projects/PROJECT_ID/secrets/PINECONE_ENVIRONMENT_REGION/versions/latest"
 ```
-
-
-
-## 🚀 About Me
-Eden Marco, Customer Engineer @ Google Cloud, Tel Aviv🇮🇱
-
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/eden-marco/) 
-
-[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/EdenEmarco177)
 
